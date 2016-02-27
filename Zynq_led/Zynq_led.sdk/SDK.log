@@ -1,0 +1,315 @@
+22:38:07 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+22:38:12 INFO  : XSDB server has started successfully.
+22:38:17 INFO  : Processing command line option -hwspec C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper.hdf.
+22:42:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+22:42:47 INFO  : 'fpga -state' command is executed.
+22:43:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:43:03 INFO  : Sourcing of 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:43:03 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0' command is executed.
+22:43:03 INFO  : Hardware design information is loaded from 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system.hdf'.
+22:43:04 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0' command is executed.
+22:43:04 INFO  : 'stop' command is executed.
+22:43:05 INFO  : 'ps7_init' command is executed.
+22:43:05 INFO  : 'ps7_post_config' command is executed.
+22:43:05 INFO  : 'con' command is executed.
+22:43:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:43:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:43:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:43:06 INFO  : The application 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/sw_logic/Debug/sw_logic.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:43:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+loadhw C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+dow C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/sw_logic/Debug/sw_logic.elf
+----------------End of Script----------------
+
+22:43:06 INFO  : Memory regions updated for context APU
+22:43:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:43:07 INFO  : 'con' command is executed.
+22:43:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+con
+----------------End of Script----------------
+
+23:18:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:18:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:18:54 INFO  : FPGA configured successfully with bitstream "C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:19:36 INFO  : Disconnected from the channel tcfchan#1.
+23:19:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:19:37 INFO  : 'fpga -state' command is executed.
+23:19:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:19:37 INFO  : Sourcing of 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:19:37 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0' command is executed.
+23:19:37 INFO  : Hardware design information is loaded from 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system.hdf'.
+23:19:38 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0' command is executed.
+23:19:38 INFO  : 'stop' command is executed.
+23:19:39 INFO  : 'ps7_init' command is executed.
+23:19:39 INFO  : 'ps7_post_config' command is executed.
+23:19:39 INFO  : 'con' command is executed.
+23:19:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:19:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:19:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:19:40 INFO  : The application 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/sw_logic/Debug/sw_logic.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:19:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+loadhw C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+dow C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/sw_logic/Debug/sw_logic.elf
+----------------End of Script----------------
+
+23:19:40 INFO  : Memory regions updated for context APU
+23:19:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:19:40 INFO  : 'con' command is executed.
+23:19:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+con
+----------------End of Script----------------
+
+23:26:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:26:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:26:24 INFO  : FPGA configured successfully with bitstream "C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:26:41 INFO  : Disconnected from the channel tcfchan#2.
+23:26:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:26:41 INFO  : 'fpga -state' command is executed.
+23:26:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:26:42 INFO  : Sourcing of 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:26:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0' command is executed.
+23:26:42 INFO  : Hardware design information is loaded from 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system.hdf'.
+23:26:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0' command is executed.
+23:26:42 INFO  : 'stop' command is executed.
+23:26:43 INFO  : 'ps7_init' command is executed.
+23:26:44 INFO  : 'ps7_post_config' command is executed.
+23:26:44 INFO  : 'con' command is executed.
+23:26:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:26:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:26:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:26:45 INFO  : The application 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/sw_logic/Debug/sw_logic.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:26:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+loadhw C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+dow C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/sw_logic/Debug/sw_logic.elf
+----------------End of Script----------------
+
+23:26:45 INFO  : Memory regions updated for context APU
+23:26:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:26:45 INFO  : 'con' command is executed.
+23:26:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+con
+----------------End of Script----------------
+
+23:28:29 INFO  : Disconnected from the channel tcfchan#3.
+23:28:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:28:30 INFO  : 'fpga -state' command is executed.
+23:28:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:28:30 INFO  : Sourcing of 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:28:30 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0' command is executed.
+23:28:30 INFO  : Hardware design information is loaded from 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system.hdf'.
+23:28:31 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0' command is executed.
+23:28:31 INFO  : 'stop' command is executed.
+23:28:32 INFO  : 'ps7_init' command is executed.
+23:28:32 INFO  : 'ps7_post_config' command is executed.
+23:28:32 INFO  : 'con' command is executed.
+23:28:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:28:32 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:28:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:28:33 INFO  : The application 'C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/sw_logic/Debug/sw_logic.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:28:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+loadhw C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+dow C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/sw_logic/Debug/sw_logic.elf
+----------------End of Script----------------
+
+23:28:33 INFO  : Memory regions updated for context APU
+23:28:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:28:33 INFO  : 'con' command is executed.
+23:28:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248496208"} -index 0
+con
+----------------End of Script----------------
+
+23:29:07 INFO  : Disconnected from the channel tcfchan#4.
+23:29:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:29:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:29:21 INFO  : FPGA configured successfully with bitstream "C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:32:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:32:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:32:40 INFO  : FPGA configured successfully with bitstream "C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:33:37 ERROR : Unexpected error while launching program.
+java.lang.IllegalArgumentException: Path for project must have only one segment.
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.WorkspaceRoot.getProject(WorkspaceRoot.java:184)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyCProject(CDebugUtils.java:586)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:623)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:675)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:578)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+23:35:08 ERROR : Unexpected error while launching program.
+java.lang.IllegalArgumentException: Path for project must have only one segment.
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.WorkspaceRoot.getProject(WorkspaceRoot.java:184)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyCProject(CDebugUtils.java:586)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:623)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:675)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:578)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+23:39:49 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:40:07 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+23:40:10 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:40:24 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+23:40:25 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:41:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:41:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:41:44 INFO  : FPGA configured successfully with bitstream "C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:43:05 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:43:08 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Failed to download ELF file
+
+
+    AP transaction timeout: ACK = 0x01, expected=0x02)
+    Error Address = 0x00114000, Size = 0x00000004
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(TM.java:686)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(AppRunner.java:129)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:637)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+23:46:34 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error while running ps7_init method.
+Cannot write to target
+
+
+    AP transaction error (DP CTRL_STAT=0xf0000021)
+    Error Address = 0xf8000008
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(TM.java:1089)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:514)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+23:48:13 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error while running ps7_init method.
+Cannot write to target
+
+
+    AP transaction error (DP CTRL_STAT=0xf0000021)
+    Error Address = 0xf8000008
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(TM.java:1089)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:514)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+23:50:10 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error while running ps7_init method.
+Cannot write to target
+
+
+    AP transaction error (DP CTRL_STAT=0xf0000021)
+    Error Address = 0xf8000008
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.run_ps7_init(TM.java:1089)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:514)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+23:50:36 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+23:51:22 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+23:51:24 INFO  : XSDB server has started successfully.
+23:51:25 INFO  : Processing command line option -hwspec C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper.hdf.
+23:51:25 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+23:51:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:51:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:51:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:52:00 INFO  : FPGA configured successfully with bitstream "C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:52:13 INFO  : ps7_init is completed.
+23:52:13 INFO  : ps7_post_config is completed.
+23:52:13 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:52:59 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:53:39 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+23:53:43 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:54:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:54:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248496208" && level==0} -index 1' command is executed.
+23:54:25 INFO  : FPGA configured successfully with bitstream "C:/Users/emink/Desktop/git/ZYNQ_LED/Zynq_led/Zynq_led.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:54:29 INFO  : ps7_init is completed.
+23:54:29 INFO  : ps7_post_config is completed.
+23:54:29 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:55:55 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+23:55:57 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:58:36 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+23:58:38 INFO  : Processor reset is completed for ps7_cortexa9_0
+00:05:38 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 

@@ -1,0 +1,68 @@
+#include "platform.h"
+#include "xgpio.h"
+#include "xgpiops.h"
+#include "xparameters.h"
+#include <stdio.h>
+
+int main()
+{
+	XGpio_Config *GPIO_Config;
+	XGpioPs_Config *PS_GPIO_Config;
+
+	XGpio my_Gpio;
+	XGpioPs my_PS_Gpio;
+
+
+	int Status;
+	int xStatus;
+	unsigned int DIP_value;
+	unsigned int LED_value;
+
+	int switch_count;
+	int test_mask;
+
+	init_platform();
+
+	printf("Sonuclar \n\r");
+
+	GPIO_Config = XGpio_LookupConfig(XPAR_AXI_GPIO_0_DEVICE_ID);
+	PS_GPIO_Config = XGpioPs_LookupConfig(XPAR_PS7_GPIO_0_DEVICE_ID);
+
+	Status = XGpio_CfgInitialize(&my_Gpio,GPIO_Config, GPIO_Config->BaseAddress);
+	xStatus = XGpioPs_CfgInitialize(&my_PS_Gpio,PS_GPIO_Config, PS_GPIO_Config->BaseAddr);
+	if(XST_SUCCESS == xStatus)
+		printf(" PS MIO INIT SUCCESS \n\r");
+	if(XST_SUCCESS == Status)
+		printf(" PL GPIO INIT SUCCESS \n\r");
+
+	XGpio_SetDataDirection(&my_Gpio, 1, 0xFF);
+	XGpio_SetDataDirection(&my_Gpio, 3, 0x00);
+	XGpioPs_SetDirectionPin(&my_PS_Gpio,7,1);
+
+	while(1)
+	{
+		DIP_value = XGpio_DiscreteRead(&my_Gpio,1);
+		LED_value = DIP_value;
+		printf("DIP=0x%04X, LED = 0x%04X\n\r",DIP_value, LED_value);
+
+		XGpio_DiscreteWrite(&my_Gpio, 2, LED_value);
+
+		switch_count = 0;
+		for( test_mask = 1; test_mask <= 0x80; test mask*=2)
+		{
+			if (DIP_value & test_mask)
+			{
+				switch_count++;
+			}
+		}
+	if (switch_count >= 4)
+	{
+		XGpioPs_WritePin(&my_PS_Gpio,7,1);
+	}
+	else
+	{
+		XGpioPs_WritePin(&my_PS_Gpio,7,0);
+	}
+	}
+	return (0);
+}
